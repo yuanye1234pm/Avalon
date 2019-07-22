@@ -1,10 +1,12 @@
-关于properties的乱码问题
-  1.当以GBK或者utf-8的格式进行保存的时候，底层的二进制代码是完全不同的
-  2.如果用Properties类读properties文件的话，那么会涉及到3种编码:
-      1.properties文件自身的编码格式：alt+enter可改
-      2.console用什么编码格式打印字符：右键run as————run configurations————common————encoding可改
-      3.eclipse自身的编码格式：这和输入输出都不一样，只是自己写代码时候的编码格式，但是会和系统的编码格式相同：
-          如果我的eclipse的workspace都是设定的utf-8,但是只要我的这个.java文件里都是英文的时候，
-          workspace里的.java格式依然是gbk(系统)字符(即使这个时候已经设定我所有的工作环境都是utf-8)，
-          而一旦有gbk和utf-8都有但是编码不同的字符的时候，才会在在workspace里把那个java文件的编码格式改成utf-8，
-          一旦，我把那些编码不同的字符全部删除，只剩下英文的时候，workspace里的java文件又会自动的变成gbk
+关于properties的乱码问题<br>
+  1.当以GBK或者utf-8的格式进行保存的时候，底层的二进制代码是完全不同的<br>
+  2.如果用Properties类读properties文件的话，那么会涉及到3种编码:<br>
+      1.properties文件自身的编码格式：alt+enter可改<br>
+      2.console用什么编码格式打印字符：右键run as————run configurations————common————encoding可改<br>
+        当我读完properties文件的时候，保存在对象里的是当前文件的编码格式的二进制，只有我把console的编码也改成和当前文件的编码格式一样的时候，<br>
+        才不会出现乱码<br>
+      3.eclipse自身的编码格式：这和输入输出都不一样，只是自己写代码时候的编码格式，但是会和系统的编码格式相同：<br>
+          如果我的eclipse的workspace都是设定的utf-8,但是只要我的这个.java文件里都是英文的时候，<br>
+          workspace里的.java格式依然是gbk(系统)字符(即使这个时候已经设定我所有的工作环境都是utf-8)，<br>
+          而一旦有gbk和utf-8都有但是编码不同的字符的时候，才会在在workspace里把那个java文件的编码格式改成utf-8，<br>
+          一旦，我把那些编码不同的字符全部删除，只剩下英文的时候，workspace里的java文件又会自动的变成gbk<br>

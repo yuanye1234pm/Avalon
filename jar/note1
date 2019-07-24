@@ -1,0 +1,1 @@
+如何在导出的jar包中，找到jar包的路径：this.getClass().getClassLoader().getResource("").toString()

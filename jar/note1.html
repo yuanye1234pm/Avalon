@@ -1,1 +1,3 @@
-如何在导出的jar包中，找到jar包的路径：this.getClass().getClassLoader().getResource("").toString()
+如何在导出的jar包中，找到jar包的路径：<br>
+1.this.getClass().getClassLoader().getResource("").toString()<br>
+2.this.getClass().getProtectionDomain().getCodeSource().getLocation().getPath()//上面的方法有时候导出jar包，后会报空指针<br>
